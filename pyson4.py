@@ -91,7 +91,7 @@ if __name__ == "__main__":
                 output_file.write(blob)
             except IOError as e:
                 print("Unable to write to '%s': %s" % (args.output_file, e), file=sys.stderr)
-                raise SystemExist(1)
+                raise SystemExit(1)
             else:
                 output_file.close()
                 file_size = int(os.path.getsize(args.output_file))
