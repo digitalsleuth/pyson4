@@ -63,7 +63,7 @@ if __name__ == "__main__":
         raise SystemExit(1)
     
     try:
-        output_file = open(args.output_file, 'w')
+        output_file = open(args.output_file, 'w', encoding='utf-8')
     except IOError as e:
         print("Unable to write to '%s': %s" % (args.output_file, e), file=sys.stderr)
         raise SystemExit(1)
@@ -72,7 +72,7 @@ if __name__ == "__main__":
         if args.d:
             blob = decompress(input_file)
             try:
-                json.dump(blob, output_file, indent=4, separators=(',',': '))
+                json.dump(blob, output_file, indent=4, ensure_ascii=False, separators=(',',': '))
                 output_file.write('\n')
             except IOError as e:
                 print("Unable to write to '%s': %s" % (args.output_file, e), file=sys.stderr)
@@ -91,7 +91,7 @@ if __name__ == "__main__":
                 output_file.write(blob)
             except IOError as e:
                 print("Unable to write to '%s': %s" % (args.output_file, e), file=sys.stderr)
-                raise SystemExist(1)
+                raise SystemExit(1)
             else:
                 output_file.close()
                 file_size = int(os.path.getsize(args.output_file))
