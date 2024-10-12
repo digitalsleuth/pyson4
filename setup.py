@@ -6,11 +6,11 @@ with open("README.md", encoding='utf8') as readme:
 
 setup(
     name="pyson4",
-    version="1.0.0",
+    version="1.2.0",
     author="Corey Forman",
     license="GNU General Public License v3.0",
     url="https://github.com/digitalsleuth/pyson4",
-    description=("Firefox jsonlz4 parsing tool"),
+    description=("Mozilla jsonlz4 parsing tool"),
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=find_packages(),

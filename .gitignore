@@ -1,0 +1,5 @@
+*.exe
+build
+dist
+version.txt
+pyson4.ico
